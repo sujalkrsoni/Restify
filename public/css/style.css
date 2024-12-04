@@ -172,12 +172,15 @@ nav {
 
 @media (min-width : 426px){
   .navbar-collapse{
-    background: #ffffff;
+    background-color: #ffffff !important;
     padding-top: 3rem;
     padding-bottom: 1rem;
   }
-  #signup-form,#login-form{
-    width: 350px !important;
+  #new-form{
+    margin-left: 1rem;
+  }
+  #signup-form,#login-form,#new-form, #edit-form{
+    width: 90% !important;
   }
   
   #show-container{
@@ -201,8 +204,15 @@ nav {
   }
 }
 
+@media (max-width : 768px){
+  #navbarNavAltMarkup{
+    background-color: white !important;
+  }
+}
+
 @media (min-width : 768px){
-  #edit-form{
+  #edit-form,#new-form{
+    margin: 0 auto;
     width: 50% !important;
   }
   #show-container{
