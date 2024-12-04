@@ -1,0 +1,252 @@
+body {
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh !important;
+}
+.container {
+  flex: 1;
+}
+
+/* Navbar */
+nav {
+  height: 5rem;
+  background-color: white;
+}
+.logo {
+  height: 3rem;
+}
+.nav-link {
+  font-size: 1.3rem;
+  color: #222 !important;
+}
+.listing-link {
+  text-decoration: none;
+}
+
+#btn-search{
+  background-color: #ff385c;
+  color: white;
+}
+#btn-search:hover {
+  background-color: #ff385c;
+  color: white;
+}
+#search-bar {
+  padding: 0.6rem 5rem;
+}
+
+/* Index Card  */
+.filter {
+  text-align: center;
+  margin-top: 2rem;
+  margin-right: 3rem;
+  opacity: 0.8;
+  cursor: pointer;
+}
+.filter:hover {
+  color: black;
+}
+#tax-info{
+  display: none;
+}
+#total{
+  display: none;
+}
+.tax-toggle {
+  border: 1px solid black;
+  border-radius: 1rem;
+  height: 3.5rem;
+  padding: 1rem;
+  margin-left: 2rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: -10px;
+}
+.listing-card {
+  border: none !important;
+  margin-bottom: 2rem;
+}
+.card-img-top {
+  border-radius: 0.7rem !important;
+  width: 100% !important;
+  object-fit: cover !important;
+}
+.card-body {
+  padding: 5px 0 !important;
+}
+.card-text {
+  font-weight: 400 !important;
+}
+.index-card:hover {
+  transform: scale(1.01);
+}
+
+/* Map */
+#map {
+  width: 80%;
+  height: 35vw;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+#markerWithExternalCss {
+  background-image: url(https://tiles.locationiq.com/static/images/marker.png);
+  background-size: cover;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+
+/* footer  */
+.f-info {
+  height: 8rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: space-evenly;
+  background-color: #ebebeb;
+  color: rgb(0, 0, 0);
+  flex-wrap: wrap;
+  text-align: center;
+}
+.f-info-links,
+.f-info-socials {
+  width: 100%;
+  vertical-align: middle;
+  margin-top: 0.5rem;
+}
+.f-info-socials i {
+  font-size: 1.5rem;
+  margin-right: 0.2rem;
+  vertical-align: middle;
+  margin-bottom: 0.2rem;
+}
+
+.f-info-links a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+.f-info-links a:hover {
+  transition: all ease 0.2s;
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+@media (max-width : 426px){
+  #signup-form,#login-form,#new-form,#edit-form{
+    width: 90% !important;
+  }
+  #form-heading{
+    font-size: 6vw;
+    font-weight: bold;
+  }
+  #new-form{
+    margin-left: 1rem;
+  }
+  #review-container{
+    width: 100% !important;
+  }
+  #rating-container{
+    display: inline !important;
+    width: 100% !important;
+  }
+  #show-container{
+    width: 100% !important;
+    overflow-x: hidden;
+  }
+  #show-img{
+    width: 90% !important;
+    height: auto;
+  }
+  #map{
+    width: 100% !important;
+    height: 50vw;
+  }
+}
+
+@media (min-width : 426px){
+  .navbar-collapse{
+    background: #ffffff;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+  }
+  #signup-form,#login-form{
+    width: 350px !important;
+  }
+  
+  #show-container{
+    width: 100% !important;
+    overflow-x: hidden;
+  }
+  #review-container{
+    width: 100% !important;
+  }
+  #rating-container{
+    display: inline !important;
+    width: 100% !important;
+  }
+  #show-img{
+    width: 80% !important;
+    height: auto !important;
+  }
+  #map{
+    width: 100% !important;
+    height: 50vw;
+  }
+}
+
+@media (min-width : 768px){
+  #edit-form{
+    width: 50% !important;
+  }
+  #show-container{
+    width: 100% !important;
+    overflow-x: hidden;
+  }
+  #comment-box{
+    width: 90%;
+  }
+  #show-img{
+    width: 550px !important;
+    height: 22rem !important;
+  }
+  #map{
+    width: 80% !important;
+    height: 35vw;
+  }
+}
+
+
+@media (max-width : 1439px){
+  .form-check-label{
+    width: 180px !important;
+  }
+}
+
+
+
+
+
+@media (orientation: portrait) {
+  .navbar-collapse{
+    background: #ffffff;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+  }
+  .navbar-brand{
+    margin-left: -1rem;
+  }
+  #search-bar{
+    padding: 0.2rem 2rem;
+  }
+  .tax-toggle{
+    display: none;
+  }
+
+}

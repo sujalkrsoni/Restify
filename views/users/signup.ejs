@@ -1,0 +1,26 @@
+<% layout('/layouts/boilerplate') %>
+
+    <div class="d-flex justify-content-center">
+        <form id="signup-form" action="/signup" method="POST" novalidate class="needs-validation  form-control w-25 mt-5">
+            <h3 id="form-heading" class="fw-bold text-center mb-3 mt-1">SingUp On Restify</h3>
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" name="username" id="username" class="form-control" required>
+                <div class="valid-feedback">Looks Good!</div>
+                <div class="invalid-feedback">Username required!</div>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="text" name="email" id="email" class="form-control" required>
+                <div class="valid-feedback">Looks Good!</div>
+                <div class="invalid-feedback">Email required!</div>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="text" name="password" id="password" class="form-control" required>
+                <div class="valid-feedback">Looks Good!</div>
+                <div class="invalid-feedback">Password required!</div>
+            </div>
+            <button class="btn btn-warning w-100 mb-3">Sign Up</button>
+        </form>
+    </div>

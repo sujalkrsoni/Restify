@@ -1,0 +1,38 @@
+<% layout('/layouts/boilerplate') %>
+<body>
+    <form  method="POST" class="needs-validation" action="/listings" enctype="multipart/form-data" novalidate>
+        <dl id="new-form" class="w-50 offset-3 form-control mt-4 mb-5 p-4">
+            <h2 id="form-heading">Create a New Listing</h2>
+            <dt>Title</dt>
+            <dd>
+                <input type="text" class="form-control" required name="listing[title]" placeholder=""> 
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please Enter Valid Title</div>
+            </dd>
+            
+            <dt>Description</dt>
+            <dd>
+                <textarea type="text" class="form-control" required name="listing[description]" placeholder=""></textarea>
+                <div class="invalid-feedback">Description Must Required</div>
+            </dd>
+            <dt>Upload Listing Image</dt>
+            <dd><input type="file"  class="form-control" name="listing[image][url]" placeholder=""></dd>
+            <dt>Price</dt>
+            <dd>
+                <input  class="form-control" type="number" required name="listing[price]" placeholder="">
+                <div class="invalid-feedback">Please Enter valid Price</div>
+            </dd>
+            <dt>Country</dt>
+            <dd>
+                <input type="text" class="form-control" required name="listing[country]" placeholder="">
+                <div class="invalid-feedback">Please Enter valid Country</div>
+            </dd>
+            <dt>Location</dt>
+            <dd>
+                <input type="text" class="form-control" required name="listing[location]" placeholder="">
+                <div class="invalid-feedback">Please Enter valid Location</div>
+            </dd>
+            <button class="btn btn-dark w-100" type="submit">Create List</button>
+        </dl>
+    </form>
+</body>

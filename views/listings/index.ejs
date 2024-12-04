@@ -1,0 +1,95 @@
+<% layout('/layouts/boilerplate') %>
+
+    <body >
+        <div id="filters" class="mb-3 d-flex align-items-center overflow-auto">
+            <div class="filter">
+                <div><i class="fa-solid fa-fire"></i></div>
+                <p>Trendings</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-bed"></i></div>
+                <p>Rooms</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-mountain-city"></i></div>
+                <p>Iconic&nbsp;Cities</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-brands fa-fort-awesome"></i></div>
+                <p>Castles</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-person-swimming"></i></div>
+                <p>Pools</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-tractor"></i></div>
+                <p>Farms</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-igloo"></i></i></div>
+                <p>Domes</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-house-user"></i></i></div>
+                <p>Tiny&nbsp;homes</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-sailboat"></i></div>
+                <p>Boats</p>
+            </div>
+            <div class="tax-toggle border border-rounded">
+                <div class="form-check-reverse form-switch">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="taxCheckBox" />
+                        <label class="form-check-label" for="taxCheckBox">Display total after taxes</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form action="/listings/new" method="get">
+            <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+                <% for(let list of allListing){ %>
+                    <a target="_blank" href="/listings/<%= list._id %>" class="listing-link">
+                        <div class="card listing-card border-none index-card">
+                            <img src="<%= list.image.url  %>" class="card-img-top" alt="" style="height: 18rem;">
+                            <div class="card-body p-0">
+                                <p class="card-text">
+                                    <b>
+                                        <%= list.title %>
+                                    </b> <br>
+                                    <b> &#8377; <%= list.price.toLocaleString('en-in') %></b>/night
+                                    <i id="tax-info"> &nbsp; &nbsp; + 18% GST</i>
+                                    <b class="ms-2" id="total"> Total : &#8377; <%= list.price + list.price * 0.18 %></b>
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                    <% } %>
+            </div>
+        </form>
+    </body>
+
+    <script>
+        let checkbox = document.querySelector("#taxCheckBox");
+        let taxInfo = document.querySelectorAll("#tax-info")
+        let total = document.querySelectorAll("#total")
+        checkbox.addEventListener("click", () => {
+            console.log("clicked");
+            if (checkbox.checked) {
+                taxInfo.forEach((item) => {
+                    item.style.display = "inline"
+                })
+                total.forEach((item) =>{
+                    item.style.display = "inline"
+                })
+            } else {
+                taxInfo.forEach((item) => {
+                    item.style.display = "none"
+                })
+                total.forEach((item) =>{
+                    item.style.display = "none"
+                })
+            }
+        })
+    </script>

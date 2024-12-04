@@ -1,0 +1,43 @@
+<% layout('/layouts/boilerplate') %>
+<body>
+    <form class="w-100 d-flex justify-content-center needs-validation" enctype="multipart/form-data" novalidate method="POST" action="/listings/<%= listing._id  %>?_method=PUT">
+        <dl id="edit-form" class="w-50  form-control mt-2 p-4">
+            <h2 id="form-heading">Edit Listings</h2>
+            <dt>Title</dt>
+            <dd>
+                <input required class="form-control" value="<%= listing.title %>" type="text" name="listing[title]" placeholder="Title">
+                <div class="valid-feedback">Looking Good!</div>
+                <div class="invalid-feedback">Please Enter valid Title</div>
+            </dd>
+            <dt>Description</dt>
+            <dd><textarea class="form-control" type="text" name="listing[description]" placeholder="description" cols="25" rows="4"><%= listing.description  %></textarea></dd>
+            <dt>Original Image Preview</dt>
+            <dd>
+                <img src="<%= originalImage %>" alt="">
+            </dd>
+            <dt>Upload New Image</dt>
+            <dd>
+                <input class="form-control" type="file" name="listing[image][url]" placeholder="Image Url">
+            </dd>
+            <dt>Price</dt>
+            <dd>
+                <input required class="form-control" value="<%= listing.price %>" type="number" name="listing[price]" placeholder="price">
+                <div class="valid-feedback">Looking Good!</div>
+                <div class="invalid-feedback">Please Enter valid Price</div>
+            </dd>
+            <dt>Country</dt>
+            <dd>
+                <input required class="form-control" value="<%= listing.location %>" type="text" name="listing[location]" placeholder="location">
+                <div class="valid-feedback">Looking Good!</div>
+                <div class="invalid-feedback">Please Enter valid country</div>
+            </dd>
+            <dt>Location</dt>
+            <dd>
+                <input required class="form-control" value="<%= listing.country %>" type="text" name="listing[country]" placeholder="country">
+                <div class="valid-feedback">Looking Good!</div>
+                <div class="invalid-feedback">Please Enter valid Location</div>
+            </dd>
+            <button class="btn btn-dark w-100" >Submit</button>
+        </dl>
+    </form>
+</body>
